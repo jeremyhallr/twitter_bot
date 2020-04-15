@@ -23,15 +23,11 @@ def encouragement_list
 end
 
 def select_random_journalist(array)
-  result = []
-  result << array[rand(array.length)]
-  return result.join("")
+  return array.sample
 end
 
 def select_random_encouragement(array)
-  result = []
-  result << array[rand(array.length)]
-  return result.join("")
+  return array.sample
 end
 
 def tweet_something(tweet)
