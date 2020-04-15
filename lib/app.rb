@@ -1,13 +1,9 @@
- # ligne très importante qui appelle la gem.
 require 'twitter'
 require 'pry'
-require 'dotenv'# Appelle la gem Dotenv
+require 'dotenv'
 
-Dotenv.load('.env') # Ceci appelle le fichier .env (situé dans le même dossier que celui d'où tu exécute app.rb)
-# et grâce à la gem Dotenv, on importe toutes les données enregistrées dans un hash ENV
+Dotenv.load('.env')
 
-
-# quelques lignes qui appellent les clés d'API de ton fichier .env
 def login_twitter
   client = Twitter::REST::Client.new do |config|
     config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
