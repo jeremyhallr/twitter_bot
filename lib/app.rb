@@ -28,9 +28,7 @@ end
 
 def select_random_journalist(array)
   result = []
-  n.times do
-    result << array[rand(array.length)]
-  end
+  result << array[rand(array.length)]
   return result.join("")
 end
 
