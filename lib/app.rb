@@ -62,3 +62,31 @@ def follow_latest_bonjour_monde(n)
     client.follow(twitter_id)
   }
 end
+
+# STREAMING
+
+def login_stream
+  client = Twitter::Streaming::Client.new do |config|
+    config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
+    config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
+    config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+    config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
+  end
+end
+
+# Stream a random sample of all tweets
+
+def random_tweet_streaming
+  login_stream.sample do |object|
+    puts object.text if object.is_a?(Twitter::Tweet)
+  end
+end
+
+# Stream every tweet regarding a speficic content
+
+def stream(content)
+  topics = content.split
+  login_stream.filter(track: topics.join(",")) do |object|
+    puts object.text if object.is_a?(Twitter::Tweet)
+  end
+end
