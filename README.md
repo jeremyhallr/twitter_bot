@@ -12,7 +12,6 @@ renduRuby
 │   └── app_spec.rb
 ├── README.md
 ├── Gemfile
-├── .env
 └── .gitignore
 ```
 
