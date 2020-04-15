@@ -15,5 +15,5 @@ renduRuby
 └── .gitignore
 ```
 
-1. `app.rb` : main .rb file with methods allowing the user to tweet, like and follow thanks to the ruby twitter gem.
+1. `app.rb` : main .rb file with methods allowing the user to tweet, like, follow and stream content thanks to the ruby twitter gem.
 2. `app_spec.rb` : rspec test file with one test.
